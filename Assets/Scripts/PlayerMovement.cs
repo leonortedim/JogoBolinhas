@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class SquareController : MonoBehaviour
 {
+    Animator animator;
     Rigidbody2D rigidbody2d;
     float speed = 8f;
     float horizontal;
@@ -13,6 +15,7 @@ public class SquareController : MonoBehaviour
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -20,6 +23,8 @@ public class SquareController : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
+
+        
     }
 
     private void FixedUpdate()
