@@ -24,6 +24,8 @@ public class SquareController : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
+        animator.SetFloat("Move X", horizontal);
+
         
     }
 

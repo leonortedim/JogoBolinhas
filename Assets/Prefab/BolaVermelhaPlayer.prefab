@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3874878529247952742}
   - component: {fileID: 7536465442962211027}
   - component: {fileID: 3641924551573575041}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BolaVermelhaPlayer
   m_TagString: RedBall
   m_Icon: {fileID: 0}
