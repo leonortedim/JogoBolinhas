@@ -36,12 +36,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-
-        if (timer >= timenextscene)
+        if (SceneManager.GetActiveScene().name == "scene")
         {
-            TransitionToNewScene();
-            timer = 0f; // Reinicia o temporizador
+            timer += Time.deltaTime;
+            Debug.Log("Timer: " + timer);
+
+            if (timer >= timenextscene)
+            {
+                TransitionToNewScene();
+                timer = 0f;
+            }
         }
     }
 
