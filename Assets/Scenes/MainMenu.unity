@@ -660,6 +660,7 @@ MonoBehaviour:
   greenBall: {fileID: 2586474741503532261, guid: 1622cba6d02c8b84c83f4f0a363500ec, type: 3}
   redBallPrefab: {fileID: 6173774363254690132, guid: 217437b7452085341896f31339bb8027, type: 3}
   redBallChasePrefab: {fileID: 4536965922990305990, guid: e4a1cfbdec14abf45b32646af4188dc8, type: 3}
+  playerPrefab: {fileID: 5185346017530374627, guid: e9be6db5f44ed3d4c81db5a00d9a290b, type: 3}
   timenextscene: 30
 --- !u!4 &1556745104
 Transform:

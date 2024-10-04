@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-public class SquareController : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     Animator animator;
     Rigidbody2D rigidbody2d;
