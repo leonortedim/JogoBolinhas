@@ -661,6 +661,7 @@ MonoBehaviour:
   redBallPrefab: {fileID: 6173774363254690132, guid: 217437b7452085341896f31339bb8027, type: 3}
   redBallChasePrefab: {fileID: 4536965922990305990, guid: e4a1cfbdec14abf45b32646af4188dc8, type: 3}
   player: {fileID: 0}
+  powerUpPrefab: {fileID: 7009838658298273155, guid: d1d40e8ec856c7d4982b109f151a7892, type: 3}
   timenextscene: 30
 --- !u!4 &1556745104
 Transform:

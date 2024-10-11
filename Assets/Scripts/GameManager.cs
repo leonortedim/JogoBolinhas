@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject redBallPrefab;
     [SerializeField] GameObject redBallChasePrefab;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject powerUpPrefab;
+
+   
 
     private float timer = 0f;
     public float timenextscene = 30f;
@@ -31,7 +34,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
+        Invoke("SpawnPowerUp", 10f);
     }
 
     // Update is called once per frame
@@ -98,5 +101,11 @@ public class GameManager : MonoBehaviour
     public void ChangeScore(int amount)
     {
         playerScore += amount;
+    }
+
+    private void SpawnPowerUp()
+    {
+        Vector2 spawnPosition = new Vector2(Random.Range(-8f, 8f), Random.Range(-4f, 4f));
+        Instantiate(powerUpPrefab, spawnPosition, Quaternion.identity);
     }
 }
