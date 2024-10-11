@@ -14,7 +14,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] GameObject powerUpPrefab;
 
-   
+    public delegate void RedBallDelegate();
+    public static event RedBallDelegate OnShrinkRedBalls;
+    public static event RedBallDelegate OnRestoreRedBalls;
 
     private float timer = 0f;
     public float timenextscene = 30f;
@@ -107,5 +109,15 @@ public class GameManager : MonoBehaviour
     {
         Vector2 spawnPosition = new Vector2(Random.Range(-8f, 8f), Random.Range(-4f, 4f));
         Instantiate(powerUpPrefab, spawnPosition, Quaternion.identity);
+    }
+    public void ShrinkRedBalls()
+    {
+        OnShrinkRedBalls?.Invoke();
+        Invoke("RestoreRedBalls", 10f); // Restore balls after 10 seconds
+    }
+
+    private void RestoreRedBalls()
+    {
+        OnRestoreRedBalls?.Invoke();
     }
 }

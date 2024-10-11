@@ -8,7 +8,7 @@ public class PowerUp : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            //GameManager.instance.ShrinkRedBalls();
+            GameManager.instance.ShrinkRedBalls();
             Destroy(gameObject); 
         }
     }
