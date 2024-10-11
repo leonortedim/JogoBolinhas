@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject player;
 
     private float timer = 0f;
-    public float timenextscene = 10f;
+    public float timenextscene = 30f;
 
     private void Awake()
     {
@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
 
     private void TransitionToLastScene()
     {
-        SceneManager.LoadScene("lastscene");
+        SceneManager.LoadScene("VictoryScene");
         DestroyAllRedBalls();
         KeepObjects();
     }
