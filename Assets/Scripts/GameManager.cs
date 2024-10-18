@@ -2,18 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
     public int playerScore = 0;
+
     [SerializeField] GameObject greenBall;
     [SerializeField] GameObject redBallPrefab;
     [SerializeField] GameObject redBallChasePrefab;
     [SerializeField] GameObject player;
     [SerializeField] GameObject powerUpPrefab;
-    [SerializeField] HiScore hiScoreManager;
+    [SerializeField] TextMeshProUGUI HiScoreText;
 
     public delegate void RedBallDelegate();
     public static event RedBallDelegate OnShrinkRedBalls;
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Invoke("SpawnPowerUp", 10f);
+        UpdateHiScoreText();
     }
 
     // Update is called once per frame
@@ -81,7 +84,7 @@ public class GameManager : MonoBehaviour
         DestroyAllRedBalls();
         KeepObjects();
 
-        hiScoreManager.CheckForNewHighScore(playerScore);
+        
     }
 
     private void DestroyAllRedBalls()
@@ -106,6 +109,21 @@ public class GameManager : MonoBehaviour
     public void ChangeScore(int amount)
     {
         playerScore += amount;
+
+        CheckHighScore();
+    }
+
+    void CheckHighScore()
+    {
+        if (playerScore > PlayerPrefs.GetInt("HiScore", 0))
+        {
+            PlayerPrefs.SetInt("HiScore", playerScore);
+        }
+    }
+
+    void UpdateHiScoreText()
+    {
+        HiScoreText.text = $"HiScore: {PlayerPrefs.GetInt("HiScore", 0)}";
     }
 
     private void SpawnPowerUp()
@@ -123,4 +141,5 @@ public class GameManager : MonoBehaviour
     {
         OnRestoreRedBalls?.Invoke();
     }
+
 }

@@ -23,4 +23,5 @@ public class Score : MonoBehaviour
         int currentScore = GameManager.instance.playerScore;
         scoretext.text = "Score: " + currentScore;
     }
+
 }

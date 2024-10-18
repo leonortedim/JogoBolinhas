@@ -6,25 +6,12 @@ using UnityEngine.UI;
 
 public class HiScore : MonoBehaviour
 {
-    public TextMeshProUGUI HiScoreText;
+    [SerializeField] private TextMeshProUGUI hiScoreText;
 
-    // Start is called before the first frame update
     void Start()
     {
-        int hiscore = PlayerPrefs.GetInt("HiScore", 0);
-        HiScoreText.text = "Hi-Score" + hiscore;
+        hiScoreText.text = $"HiScore: {PlayerPrefs.GetInt("HiScore", 0)}";
     }
 
-    public void CheckForNewHighScore(int currentScore)
-    {
-        int hiscore = PlayerPrefs.GetInt("HiScore", 0);
 
-        // Check if the current score is higher than the saved high score
-        if (currentScore > hiscore)
-        {
-            // Save the new high score
-            PlayerPrefs.SetInt("HiScore", currentScore);
-            HiScoreText.text = "New High Score: " + currentScore;
-        }
-    }
 }
