@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject redBallChasePrefab;
     [SerializeField] GameObject player;
     [SerializeField] GameObject powerUpPrefab;
+    [SerializeField] HiScore hiScoreManager;
 
     public delegate void RedBallDelegate();
     public static event RedBallDelegate OnShrinkRedBalls;
@@ -79,6 +80,8 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("VictoryScene");
         DestroyAllRedBalls();
         KeepObjects();
+
+        hiScoreManager.CheckForNewHighScore(playerScore);
     }
 
     private void DestroyAllRedBalls()
