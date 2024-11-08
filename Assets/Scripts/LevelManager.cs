@@ -28,6 +28,13 @@ public class LevelManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void PlayAgain()
+    {
+        GameManager.instance.playerScore = 0;
+        GameManager.instance.UpdateHiScoreText();
+        SceneManager.LoadScene("MainMenu");
+    }
 }
 
 

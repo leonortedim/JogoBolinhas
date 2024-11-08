@@ -41,9 +41,16 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "scene") 
+        if (scene.name == "scene")
         {
+            // Only spawn the player if it does not exist yet
+            if (GameObject.FindWithTag("Player") == null)
+            {
+                Instantiate(player, new Vector2(0, 0), Quaternion.identity); // Spawn player at the desired position
+            }
+
             Invoke("SpawnPowerUp", 10f);
+
         }
     }
 
