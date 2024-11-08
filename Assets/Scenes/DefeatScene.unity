@@ -656,7 +656,7 @@ GameObject:
   - component: {fileID: 1602693888}
   - component: {fileID: 1602693892}
   m_Layer: 5
-  m_Name: VictoryScene
+  m_Name: DefeatScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

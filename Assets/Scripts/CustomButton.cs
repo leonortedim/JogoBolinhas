@@ -7,9 +7,7 @@ using UnityEngine.UI;
 public class CustomButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] private Image img;
-    //[SerializeField] private Sprite normal, pressed;
-    //[SerializeField] private AudioClip compressClip, umcompressClip;
-    //[SerializeField] private AudioSource source;
+    
     public void OnPointerDown(PointerEventData eventData)
     {
         throw new System.NotImplementedException();
