@@ -13,6 +13,11 @@ public class Score : MonoBehaviour
     {
         UpdateScoreText();
     }
+    void Update()
+    {
+        // Update the score text every frame to reflect changes in real time
+        UpdateScoreText();
+    }
     public void ChangeScore()
     {
         GameManager.instance.ChangeScore(1);
@@ -20,7 +25,8 @@ public class Score : MonoBehaviour
     }
     public void UpdateScoreText()
     {
-        int currentScore = GameManager.instance.playerScore;
+        int playerScore = GameManager.instance.playerScore;
+        int currentScore = playerScore;
         scoretext.text = "Score: " + currentScore;
     }
 
