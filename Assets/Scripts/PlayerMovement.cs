@@ -45,7 +45,9 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "RedBall")
         {
             animator.SetTrigger("isDead");
-            await Task.Delay(3000);
+            enabled = false;
+
+            await Task.Delay(2000);
             SceneManager.LoadScene("DefeatScene");
 
         }
