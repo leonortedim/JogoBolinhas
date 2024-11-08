@@ -40,16 +40,16 @@ public class PlayerMovement : MonoBehaviour
         position.y += speed * vertical * Time.deltaTime;
         rigidbody2d.MovePosition(position);
     }
-    //private async void OnCollisionEnter2D(Collision2D collision)
-    //{
-        //if (collision.gameObject.tag == "RedBall")
-        //{
-            //animator.SetTrigger("isDead");
-            //enabled = false;
+    private async void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "RedBall")
+        {
+            animator.SetTrigger("isDead");
+            enabled = false;
 
-           // await Task.Delay(2000);
-          //  SceneManager.LoadScene("DefeatScene");
+            await Task.Delay(2000);
+            SceneManager.LoadScene("DefeatScene");
 
-       // }
-   // }
+        }
+    }
 }
