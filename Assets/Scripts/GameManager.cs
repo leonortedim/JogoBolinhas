@@ -39,7 +39,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+      
         Invoke("SpawnPowerUp", 10f);
+       
         UpdateHiScoreText();
     }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using System.Threading.Tasks;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Move X", horizontal);
         animator.SetFloat("Move Y", vertical);
 
+        float speed = Mathf.Sqrt(horizontal * horizontal + vertical * vertical);
+        animator.SetFloat("Speed", speed);
+
     }
 
     private void FixedUpdate()
@@ -36,10 +40,12 @@ public class PlayerMovement : MonoBehaviour
         position.y += speed * vertical * Time.deltaTime;
         rigidbody2d.MovePosition(position);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private async void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "RedBall")
         {
+            animator.SetTrigger("isDead");
+            await Task.Delay(3000);
             SceneManager.LoadScene("DefeatScene");
 
         }
