@@ -7,6 +7,7 @@ TagManager:
   - RedBall
   - GreenBall
   - PowerUp
+  - Wall
   layers:
   - Default
   - TransparentFX

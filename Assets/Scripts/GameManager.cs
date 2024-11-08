@@ -35,13 +35,20 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "scene") 
+        {
+            Invoke("SpawnPowerUp", 10f);
+        }
     }
 
     void Start()
     {
-      
-        Invoke("SpawnPowerUp", 10f);
-       
         UpdateHiScoreText();
     }
 
