@@ -32,7 +32,7 @@ public class LevelManager : MonoBehaviour
     public void PlayAgain()
     {
         GameManager.instance.playerScore = 0;
-        GameManager.instance.UpdateHiScoreText();
+        
         SceneManager.LoadScene("MainMenu");
     }
 }
